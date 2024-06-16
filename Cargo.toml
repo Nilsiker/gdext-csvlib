@@ -1,0 +1,14 @@
+[package]
+name = "csvlib" # Appears in the filename of the compiled dynamic library.
+version = "0.1.0"     # You can leave version and edition as-is for now.
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]  # Compile this crate to a dynamic C library.
+
+[dependencies]
+anyhow = "1.0.86"
+csv = "1.3.0"
+godot = { git = "https://github.com/godot-rust/gdext", branch = "master" }
+thiserror = "1.0.61"
+
