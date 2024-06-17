@@ -1,11 +1,7 @@
-@tool
 extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	CsvLib.debug()
+	var csv = TranslationCsv.from_path("res://in.csv")
+	csv.replace_value("GREET", "en", "HOWDY FROM GODOT!")	
+	csv.write_csv("res://out.csv")
